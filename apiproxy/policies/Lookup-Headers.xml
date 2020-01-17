@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<KeyValueMapOperations async="false" continueOnError="false" enabled="true" name="Lookup-Headers" mapIdentifier="microgateway-router-headers">
+    <DisplayName>Lookup Headers</DisplayName>
+    <Properties/>
+    <ExclusiveCache>false</ExclusiveCache>
+    <ExpiryTimeInSecs>10</ExpiryTimeInSecs>
+    <Get assignTo="private.httpheaders">
+        <Key>
+            <Parameter ref="endpointLookup"/>
+        </Key>
+    </Get>
+    <Scope>environment</Scope>
+</KeyValueMapOperations>

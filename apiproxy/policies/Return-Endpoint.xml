@@ -5,7 +5,11 @@
     <Set>
         <Payload contentType="application/json" variablePrefix="@" variableSuffix="#">
             {
-              "endpoint": "@endpoint#"
+              "endpoint": "@endpoint#",
+              "httpheaders": 
+              [
+                @private.httpheaders#
+              ]
             }
         </Payload>
     </Set>
