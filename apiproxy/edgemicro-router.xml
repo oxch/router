@@ -3,11 +3,11 @@
     <Basepaths>/edgemicro-router</Basepaths>
     <ConfigurationVersion majorVersion="4" minorVersion="0"/>
     <CreatedAt>1579204422599</CreatedAt>
-    <CreatedBy>oleksandr.chumak@exeloncorp.com</CreatedBy>
+    <CreatedBy>alex_chumak@hotmail.com</CreatedBy>
     <Description></Description>
     <DisplayName>edgemicro-router</DisplayName>
     <LastModifiedAt>1579224481592</LastModifiedAt>
-    <LastModifiedBy>oleksandr.chumak@exeloncorp.com</LastModifiedBy>
+    <LastModifiedBy>alex_chumak@hotmail.com</LastModifiedBy>
     <ManifestVersion>SHA-512:fca4da06fa1e714e37f2a101b0d0b5f97ac4bacd6a80e0b274a721387ac38a151f7d4cf6757cc988813f150a9d74b612c26e35ed763819f5acd962024937e70c</ManifestVersion>
     <Policies>
         <Policy>Extract-Proxy-Details</Policy>
