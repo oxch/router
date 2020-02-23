@@ -23,6 +23,9 @@ module.exports.init = function (config, logger, stats) {
 			var proxyRev = res.proxy.revision;
 			var key = proxyName + '_' + proxyRev;
 			var target = res.proxy.url;
+			var proxyBasePath = res.proxy.base_path;
+			var normalazideProxyBasePath = proxyBasePath.slice(-1) === '/' ? proxyBasePath.slice(0,-1) : proxyBasePath;
+			var resourcepath = url.parse(req.url).pathname.substr(normalazideProxyBasePath.length) || '';
 			var queryparams = url.parse(req.url).search || '';
 			
 			debug ('key: ' + key + ' and target ' + target);
@@ -40,7 +43,7 @@ module.exports.init = function (config, logger, stats) {
 							var parts = url.parse(endpoint.endpoint);
 							req.targetHostname = parts.host;
 							req.targetPort = parts.port;
-							req.targetPath = parts.pathname + queryparams;
+							req.targetPath = parts.pathname + resourcepath + queryparams;
 							//add HTTP headers
 							if (endpoint.httpheaders) {
 								debug("found " + endpoint.httpheaders.length + " HTTP header(s) in cache");
@@ -70,7 +73,7 @@ module.exports.init = function (config, logger, stats) {
 												req.targetPort = parts.port;
 												debug("target hostname: " + parts.hostname + " target port: " + parts.port);
 											}
-											req.targetPath = parts.pathname + queryparams;
+											req.targetPath = parts.pathname + resourcepath + queryparams;
 										} else {
 											debug("endpoint not found, using proxy endpoint");
 											endpoint.endpoint = target;
